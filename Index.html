@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cuenta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Crear Cuenta</h2>
+        <form id="registroForm">
+            <input type="text" id="nombres" placeholder="Nombres" required>
+            <input type="text" id="apellidos" placeholder="Apellidos" required>
+            <input type="text" id="dni" placeholder="DNI (8 dígitos)" required>
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
+            <input type="text" id="celular" placeholder="Celular (9 dígitos)" required>
+            <input type="number" id="edad" placeholder="Edad" min="18" required>
+            <input type="text" id="ciudad" placeholder="Ciudad" required>
+            <input type="text" id="carrera" placeholder="Carrera o especialidad" required>
+            <input type="password" id="password" placeholder="Contraseña (mín. 6 caracteres)" required>
+            <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" required>
+            <button type="submit">Crear cuenta</button>
+        </form>
+        <p id="mensajeError" class="error"></p>
+    </div>
+    <script src="registro.js"></script>
+</body>
+</html>
