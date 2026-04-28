@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="bienvenida">Hola</h1>
+        <div class="card">
+            <h3>Información del Perfil</h3>
+            <p><strong>Nombre completo:</strong> <span id="p-nombre"></span></p>
+            <p><strong>DNI:</strong> <span id="p-dni"></span></p>
+            <p><strong>Correo:</strong> <span id="p-correo"></span></p>
+            <p><strong>Celular:</strong> <span id="p-celular"></span></p>
+            <p><strong>Edad:</strong> <span id="p-edad"></span></p>
+            <p><strong>Ciudad:</strong> <span id="p-ciudad"></span></p>
+            <p><strong>Carrera:</strong> <span id="p-carrera"></span></p>
+            <p><strong>Fecha de registro:</strong> <span id="p-fecha"></span></p>
+        </div>
+        <button onclick="window.location.href='index.html'">Volver al registro</button>
+    </div>
+
+    <script>
+        const usuario = JSON.parse(localStorage.getItem('usuarioRegistrado'));
+
+        if (!usuario) {
+            alert("No hay datos registrados.");
+            window.location.href = 'index.html';
+        } else {
+            document.getElementById('bienvenida').textContent = `Bienvenido, ${usuario.nombres}`;
+            document.getElementById('p-nombre').textContent = `${usuario.nombres} ${usuario.apellidos}`;
+            document.getElementById('p-dni').textContent = usuario.dni;
+            document.getElementById('p-correo').textContent = usuario.correo;
+            document.getElementById('p-celular').textContent = usuario.celular;
+            document.getElementById('p-edad').textContent = usuario.edad;
+            document.getElementById('p-ciudad').textContent = usuario.ciudad;
+            document.getElementById('p-carrera').textContent = usuario.carrera;
+            document.getElementById('p-fecha').textContent = usuario.fechaRegistro;
+        }
+    </script>
+</body>
+</html>
